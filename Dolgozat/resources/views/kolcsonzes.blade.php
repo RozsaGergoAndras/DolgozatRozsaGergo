@@ -6,6 +6,23 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>szia</h1>
+        @foreach ($filmek as $film)
+            @if ()
+            
+            @endif
+        @endforeach
+        
+
+
+        <select name="" id="">
+            @foreach ($mufajok as $mufaj)
+                <option value= "{{$mufaj->id}}">{{$mufaj->mufaj}}</option>
+            @endforeach
+        </select>
+        <select name="" id="">
+            @foreach ($filmek as $film)
+                <option value= "{{$film->id}}">{{$film->cim}}</option>
+            @endforeach
+        </select>
     </body>
 </html>
