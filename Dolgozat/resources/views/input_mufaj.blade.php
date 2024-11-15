@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Szia</h1>
+        <form action="{{route('mufaj.store')}}" method="post">
+            @csrf
+            <input type="text" id="mufaj" name="mufaj">
+            <input type="submit">
+        </form>
 </body>
 </html>

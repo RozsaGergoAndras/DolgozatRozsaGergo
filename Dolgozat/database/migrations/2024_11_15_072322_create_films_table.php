@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string("cim");
             $table->string("rendezo");
             $table->date("megjelenes");
-            $table->integer('mufaj_id');
+            $table->unsignedBigInteger('mufaj_id');
+
+            $table->foreign('mufaj_id')->references('id')->on('mufajok')->onDelete('cascade');
         });
     }
 

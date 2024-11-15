@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KolcsonzesController;
 use App\Http\Controllers\MufajController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//Film-Műfaj importok
+Route::post('/new-genre',[MufajController::class, 'store'])->name('mufaj.store'); 
 Route::get('/new-genre',[MufajController::class, 'create'])->name('film.create'); 
+Route::get('/new-film',[MufajController::class, 'createketto'])->name('film.createketto'); 
+Route::post('/new-film',[MufajController::class, 'storeketto'])->name('film.storeketto'); 
+
+//Kölcsönzés import
+Route::get('/films',[KolcsonzesController::class, 'createharom'])->name('kolcsonzes.createharom'); 
+
+
 
 require __DIR__.'/auth.php';
